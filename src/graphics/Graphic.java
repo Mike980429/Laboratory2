@@ -6,6 +6,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import model.Platform;
@@ -28,6 +29,7 @@ public class Graphic extends JFrame{
 	
 	public Graphic() {
 		// TODO Auto-generated constructor stub
+		
 		image=new JLabel();
 		ima=new ImageIcon("/resource/fot.jpg");
 		Icon c=new ImageIcon(ima.getImage());
@@ -36,7 +38,7 @@ public class Graphic extends JFrame{
 		
 		panelOne=new PanelOne(this);
 		panelTwo=new PanelTwo(this);
-		panelThree=new PanelThree(this);
+		
 		
 		platform= new Platform(); 
 		panelAux=new JPanel(new BorderLayout());
@@ -44,11 +46,18 @@ public class Graphic extends JFrame{
 		panelAux.add(panelOne,BorderLayout.WEST);
 		panelAux.add(image,BorderLayout.NORTH);
 		panelAux.add(panelTwo,BorderLayout.EAST);
-		
+		//panelAux.add(panelThree,BorderLayout.SOUTH);
 		add(panelAux);
 		setVisible(true);
 		//pack();
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		pack();
+	}
+
+	public void enterPlatform(){
+		panelThree=new PanelThree(this);
+		panelThree.setVisible(true);
+		
 	}
 	
 	
@@ -60,11 +69,9 @@ public class Graphic extends JFrame{
 	
 	
 	
-	
-	
-	public static void main(String []buñuelo) {
+	public static void main(String []ventana) {
 		Graphic graphics=new Graphic();
 		
 	}
 
-
+}

@@ -39,6 +39,24 @@ public class Player {
 		weapons.push(new Weapon());
 	}
 
+	public void addWeapon(String type,int numBullets) {
+		if(numBullets!=0) {
+			weapons.push(new Weapon(type,numBullets));
+		}	
+	}
+	
+	public void deleteWeaponAutomatic() {
+		if(weapons.firstElement().isAx()==false) {
+			if(weapons.firstElement().getNumBullets()==0) {
+				weapons.pop();
+			}
+		}
+	}
+	
+	public Stack<Weapon> getWeapons() {
+		return weapons;
+	}
+	
 	public void assingPlatform(int platform) {
 		if(platform==1) {
 			this.platform=XBOX;

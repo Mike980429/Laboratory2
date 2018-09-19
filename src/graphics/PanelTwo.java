@@ -92,7 +92,8 @@ public class PanelTwo extends JPanel implements ActionListener {
 		}else if(e.getActionCommand().equals(DELETE)) {
 			
 		}else if(e.getActionCommand().equals(ADDPLATFORM)) {
-			
+			main.enterPlatform();
+			System.out.println("ddd");
 		}
 		
 	}
