@@ -8,6 +8,7 @@ public class Platform {
 
 	
 	private HashMap<String, Player> players;
+	//private HashMap<String,players> playersOne;
 	
 	
 	public Platform() {
@@ -16,13 +17,15 @@ public class Platform {
 		
 		
 	}
-	
 	public void addPlayer(String nickName,double pin, String geoLocation, int ability,int platform,ImageIcon image) {
-	Player aux=new Player(nickName,pin,geoLocation,ability,platform,image);
-	players.put(aux.getAbility(), aux);
-		
+		Player aux=new Player(nickName,pin,geoLocation,ability,platform,image);
+		players.put(aux.getAbility(), aux);
 	}
 	
+	public HashMap<String, Player> getPlayers() {
+		return players;
+	}
+		
 	
 	
 }
