@@ -6,6 +6,7 @@ import java.awt.GridLayout;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.border.TitledBorder;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
@@ -16,7 +17,7 @@ public class PanelOne extends JPanel implements ListSelectionListener{
 	private Graphic main;
 	private JScrollPane scroll;
 	private JList<Player> players;
-	//private String[] s={"enero","febrero"};
+
 	private JPanel aux;
 	
 	public PanelOne(Graphic main) {
@@ -31,11 +32,9 @@ public class PanelOne extends JPanel implements ListSelectionListener{
 		aux.setSize(new Dimension(366,66));
 		aux.add(players);
 		add(aux);
-		
+		setBorder(new TitledBorder("Lista Jugadores registrados"));
 	}
 
-	
-	
 	
 	@Override
 	public void valueChanged(ListSelectionEvent e) {

@@ -1,5 +1,6 @@
 package graphics;
 
+import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -7,13 +8,14 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.border.TitledBorder;
 
 public class PanelTwo extends JPanel implements ActionListener {
 
 	
-	public final static String ADD="aÃ±adir";
+	public final static String ADD="añadir";
 	public final static String DELETE="eliminar";
-	public final static String ADDPLATFORM="aÃ±adiPlataforma";
+	public final static String ADDPLATFORM="añadir Plataforma";
 	
 	private Graphic main;
 	
@@ -41,15 +43,16 @@ public class PanelTwo extends JPanel implements ActionListener {
 		auxTwo=new JPanel(new GridLayout(1,3));
 		join=new JPanel(new GridLayout(2,1));
 		
-		addPlayer=new JButton("Agregar");
+		addPlayer=new JButton("Agregar jugador");
 		addPlayer.setActionCommand(ADD);
 		addPlayer.addActionListener(this);
 		
-		deletePlayer=new JButton("Eliminar");
+		deletePlayer=new JButton("Eliminar jugador");
 		deletePlayer.setActionCommand(DELETE);
 		deletePlayer.addActionListener(this);
+		deletePlayer.setSize(new Dimension(33,60));
 		
-		addPlatform=new JButton("AÃ±adir a plataforma");
+		addPlatform=new JButton("Añadir a plataforma");
 		addPlatform.setActionCommand(ADDPLATFORM);
 		addPlatform.addActionListener(this);
 		
@@ -58,6 +61,7 @@ public class PanelTwo extends JPanel implements ActionListener {
 		pin=new JLabel("Numero Ping:");
 		geoLocation=new JLabel("Localizacion:");
 		platform=new JLabel("Plataforma:");
+		setBorder(new TitledBorder("Datos Jugador"));
 		
 		addPanels();
 		add(join);
@@ -77,6 +81,7 @@ public class PanelTwo extends JPanel implements ActionListener {
 		auxTwo.add(addPlayer);
 		auxTwo.add(deletePlayer);
 		auxTwo.add(addPlatform);
+		auxTwo.setBorder(new TitledBorder("Controlador"));
 		join.add(auxTwo);
 		
 	}

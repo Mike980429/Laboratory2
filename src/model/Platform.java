@@ -17,7 +17,6 @@ public class Platform {
 		
 		
 	}
-	
 	public void addPlayer(String nickName,double pin, String geoLocation, int ability,int platform,ImageIcon image) {
 		Player aux=new Player(nickName,pin,geoLocation,ability,platform,image);
 		players.put(aux.getAbility(), aux);

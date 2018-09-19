@@ -26,12 +26,13 @@ public class Graphic extends JFrame{
 	private ImageIcon ima;
 	
 	private JPanel panelAux;
+
 	
 	public Graphic() {
 		// TODO Auto-generated constructor stub
 		
 		image=new JLabel();
-		ima=new ImageIcon("/resource/fot.jpg");
+		ima=new ImageIcon("./sources/fortnite.jpg");
 		Icon c=new ImageIcon(ima.getImage());
 		image.setIcon(c);
 		this.repaint();
@@ -57,11 +58,18 @@ public class Graphic extends JFrame{
 	public void enterPlatform(){
 		panelThree=new PanelThree(this);
 		panelThree.setVisible(true);
+	
 		
 	}
 	
+	public void addPlayer(String nickName,double pin, String geoLocation, int ability,int platform,ImageIcon skin){
+		this.platform.addPlayer(nickName, pin, geoLocation, ability, platform, skin);
+	}
 	
-	
+	public void addArm(){
+		
+		
+	}
 	
 	
 	

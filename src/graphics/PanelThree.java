@@ -1,11 +1,13 @@
 package graphics;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JDialog;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -13,7 +15,7 @@ import javax.swing.JPanel;
 import model.Player;
 import model.Weapon;
 
-public class PanelThree extends JOptionPane implements ActionListener{
+public class PanelThree extends JDialog implements ActionListener{
 
 	/**
 	 * 
@@ -53,11 +55,12 @@ public class PanelThree extends JOptionPane implements ActionListener{
 		returnMenu.addActionListener(this);
 		
 		players=new JList<Player>();
+		//players.setSize(new Dimension(60,60));
 		weapons=new JList<Weapon>();
 		
 		addPanel();
 		add(aux);
-		
+		pack();
 	}
 	
 	
@@ -77,7 +80,7 @@ public class PanelThree extends JOptionPane implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		if(e.getActionCommand().equals(RETURN)) {
-			
+			this.setVisible(false);
 		}else if(e.getActionCommand().equals(SHOOT)) {
 			
 		}

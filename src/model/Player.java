@@ -52,6 +52,13 @@ public class Player {
 			}
 		}
 	}
+	public void shootPlayer(){
+		if(weapons.firstElement().isAx()==false){
+			if(weapons.firstElement().getNumBullets()!=0){
+				weapons.firstElement().setNumBullets(weapons.firstElement().getNumBullets()-1);
+			}
+		}
+	}
 	
 	public Stack<Weapon> getWeapons() {
 		return weapons;
