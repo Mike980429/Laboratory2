@@ -71,11 +71,7 @@ public class Graphic extends JFrame{
 		
 	}
 	
-	
-	
-	
-	
-	
+
 	
 	public static void main(String []ventana) {
 		Graphic graphics=new Graphic();

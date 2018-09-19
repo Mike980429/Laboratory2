@@ -123,4 +123,11 @@ public class Player {
 		this.ability = ability;
 	}
 
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		String mensaje=this.nickName+""+this.platform+" "+this.pin+" "+this.geoLocation+" Numero ";
+		return mensaje;
+	}
 }
