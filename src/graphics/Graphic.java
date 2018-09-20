@@ -9,6 +9,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.ListModel;
 
 import model.Platform;
 import model.Player;
@@ -64,14 +65,17 @@ public class Graphic extends JFrame{
 	}
 	
 	public void addPlayer(String nickName,double pin, String geoLocation, int ability,int platform){
-		this.platform.addPlayer(nickName, pin, geoLocation, ability, platform);
 		
+		this.platform.addPlayer(nickName, pin, geoLocation, ability, platform);
+		Player[] s=viewListPlayers().toArray(new Player[viewListPlayers().size()]);
+		panelOne.getPlayers().setListData(s);
+
 	}
 	public ArrayList<Player> viewListPlayers() {
-		//panelOne.getPlayers().
+	
 		return platform.convertListPlayers();
 	}
-	
+
 	
 	public void addArm(){
 		

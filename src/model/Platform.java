@@ -34,7 +34,9 @@ public class Platform {
 		Iterator<String> iterator=players.keySet().iterator();
 		while(iterator.hasNext()) {
 			String key=iterator.next();
+			listPlayer.add(players.get(key));
 		}
+		System.out.println(listPlayer.get(0).getAbility());
 		return listPlayer;
 	}
 	
