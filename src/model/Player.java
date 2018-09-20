@@ -9,13 +9,13 @@ import javax.swing.ImageIcon;
 public class Player {
 	
 	//Constantes:
-	public final static String NOOB="Novato"; 
-	public final static String INTERMEDIATE="Intermedio";
-	public final static String ADVANCED="Avanzado";
+	public final static String NOOB="noob"; 
+	public final static String INTERMEDIATE="intermediate";
+	public final static String ADVANCED="advanced";
 	
-	public final static String XBOX="XBOX";
-	public final static String PC="PC";
-	public final static String PS4="PS4";
+	public final static String XBOX="advanced";
+	public final static String PC="pc";
+	public final static String PS4="ps4";
 	
 	//Relaciones:
 	private Stack<Weapon> weapons;
@@ -141,7 +141,11 @@ public class Player {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
+<<<<<<< HEAD
 		String mensaje=this.nickName+" / "+this.ability+" / "+this.platform+" / # Ping: "+this.pin+" / "+this.geoLocation;
+=======
+		String mensaje=this.nickName+""+this.platform+" "+this.pin+" "+this.geoLocation+" Numero ";
+>>>>>>> cee74154c869d75565dbc821bbc511b44e3047de
 		return mensaje;
 	}
 }
