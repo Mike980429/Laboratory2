@@ -4,13 +4,14 @@ import java.awt.Dimension;
 import java.awt.GridLayout;
 
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.border.TitledBorder;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
-import model.Player;
+import model.*;
 
 public class PanelOne extends JPanel implements ListSelectionListener{
 
@@ -27,7 +28,6 @@ public class PanelOne extends JPanel implements ListSelectionListener{
 		this.main=main;
 		players=new JList<Player>();
 		players.addListSelectionListener(this);
-		players.setSelectionModel(null);
 		
 		scroll=new JScrollPane();
 
@@ -42,11 +42,54 @@ public class PanelOne extends JPanel implements ListSelectionListener{
 	
 	@Override
 	public void valueChanged(ListSelectionEvent e) {
-		// TODO Auto-generated method stub
-		Player s=(Player) e.getSource();
-		System.out.println(e.getSource());
-		//System.out.println(s.getAbility());
+		//e.ge
+		if(!e.getValueIsAdjusting()){
+			Player a=players.getSelectedValue();
+		}
+		
+		
+
 		
 	}
 
+
+	public Graphic getMain() {
+		return main;
+	}
+
+
+	public void setMain(Graphic main) {
+		this.main = main;
+	}
+
+
+	public JScrollPane getScroll() {
+		return scroll;
+	}
+
+
+	public void setScroll(JScrollPane scroll) {
+		this.scroll = scroll;
+	}
+
+
+	public JList<Player> getPlayers() {
+		return players;
+	}
+
+
+	public void setPlayers(JList<Player> players) {
+		this.players = players;
+	}
+
+
+	public JPanel getAux() {
+		return aux;
+	}
+
+
+	public void setAux(JPanel aux) {
+		this.aux = aux;
+	}
+	
 }

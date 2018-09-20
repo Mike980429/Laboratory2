@@ -1,6 +1,7 @@
 package graphics;
 
 import java.awt.BorderLayout;
+import java.util.ArrayList;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -8,9 +9,10 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.ListModel;
 
 import model.Platform;
-
+import model.Player;
 public class Graphic extends JFrame{
 
 	/**
@@ -32,7 +34,7 @@ public class Graphic extends JFrame{
 		// TODO Auto-generated constructor stub
 		
 		image=new JLabel();
-		ima=new ImageIcon("./sources/fortnite.jpg");
+		ima=new ImageIcon("./sources/2.jpg");
 		Icon c=new ImageIcon(ima.getImage());
 		image.setIcon(c);
 		this.repaint();
@@ -63,8 +65,8 @@ public class Graphic extends JFrame{
 	}
 	
 	public void addPlayer(String nickName,double pin, String geoLocation, int ability,int platform){
+		
 		this.platform.addPlayer(nickName, pin, geoLocation, ability, platform);
-<<<<<<< HEAD
 		viewListPlayers();
 
 	}
@@ -72,26 +74,14 @@ public class Graphic extends JFrame{
 		Player[] s=platform.convertListPlayers().toArray(new Player[platform.convertListPlayers().size()]);
 		panelOne.getPlayers().setListData(s);
 	}
-	
-<<<<<<< HEAD
-=======
-	
->>>>>>> ab71e396407ad98089d97f99093947d849d9f6c8
 	public void deletePlayer(String nickName) {
 		platform.deletePlayer(nickName);
 		viewListPlayers();
-
-	}
-		
-	
-	
-=======
 	}
 	
->>>>>>> parent of 8019983... pulling
 	public void addArm(){
 		
-		
+		//
 	}
 	
 
