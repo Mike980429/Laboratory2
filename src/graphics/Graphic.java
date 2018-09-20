@@ -74,6 +74,7 @@ public class Graphic extends JFrame{
 		Player[] s=platform.convertListPlayers().toArray(new Player[platform.convertListPlayers().size()]);
 		panelOne.getPlayers().setListData(s);
 	}
+	
 	public void deletePlayer(String nickName) {
 		platform.deletePlayer(nickName);
 		viewListPlayers();

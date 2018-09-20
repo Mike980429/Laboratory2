@@ -20,16 +20,19 @@ public class PanelOne extends JPanel implements ListSelectionListener{
 
 	private JPanel aux;
 	
+	
 	public PanelOne(Graphic main) {
 		// TODO Auto-generated constructor stub
 		
 		this.main=main;
 		players=new JList<Player>();
+		players.addListSelectionListener(this);
+		
 		scroll=new JScrollPane();
-		//players.setName(name);
-		//players.add(s);
+
 		aux=new JPanel(new GridLayout());
 		aux.setSize(new Dimension(366,66));
+		
 		aux.add(players);
 		add(aux);
 		setBorder(new TitledBorder("Lista Jugadores registrados"));
@@ -39,6 +42,9 @@ public class PanelOne extends JPanel implements ListSelectionListener{
 	@Override
 	public void valueChanged(ListSelectionEvent e) {
 		// TODO Auto-generated method stub
+		
+		System.out.println(e.getSource());
+		//System.out.println(s.getAbility());
 		
 	}
 
