@@ -75,10 +75,17 @@ public class Graphic extends JFrame{
 		panelOne.getPlayers().setListData(s);
 	}
 	
+<<<<<<< HEAD
+=======
+	
+>>>>>>> ab71e396407ad98089d97f99093947d849d9f6c8
 	public void deletePlayer(String nickName) {
 		platform.deletePlayer(nickName);
 		viewListPlayers();
+
 	}
+		
+	
 	
 	public void addArm(){
 		
