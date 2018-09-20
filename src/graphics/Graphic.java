@@ -64,13 +64,7 @@ public class Graphic extends JFrame{
 	}
 	
 	public void addPlayer(String nickName,double pin, String geoLocation, int ability,int platform){
-<<<<<<< HEAD
 		this.platform.addPlayer(nickName, pin, geoLocation, ability, platform);
-=======
-		
-		this.platform.addPlayer(nickName, pin, geoLocation, ability, platform);
-<<<<<<< HEAD
->>>>>>> parent of 92fbb22... changes
 		
 	}
 	public ArrayList<Player> viewListPlayers() {
@@ -78,22 +72,7 @@ public class Graphic extends JFrame{
 		return platform.convertListPlayers();
 	}
 	
-<<<<<<< HEAD
 	
-=======
-=======
-		Player[] s=viewListPlayers().toArray(new Player[viewListPlayers().size()]);
-		panelOne.getPlayers().setListData(s);
-
-	}
-	public ArrayList<Player> viewListPlayers() {
-	
-		return platform.convertListPlayers();
-	}
-
->>>>>>> 302fcce3d10eb5f35f323d9603d5f7a8219076c0
-	
->>>>>>> parent of 92fbb22... changes
 	public void addArm(){
 		
 		
