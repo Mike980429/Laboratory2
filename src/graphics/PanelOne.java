@@ -27,7 +27,7 @@ public class PanelOne extends JPanel implements ListSelectionListener{
 		this.main=main;
 		players=new JList<Player>();
 		players.addListSelectionListener(this);
-		players.setSelectionModel(null);
+	//	players.setSelectionModel(null);
 		
 		scroll=new JScrollPane();
 
