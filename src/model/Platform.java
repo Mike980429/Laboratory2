@@ -47,8 +47,10 @@ public class Platform {
 		boolean f=false;
 		while(iterator.hasNext()&&!f) {
 			String key=iterator.next();
+			System.out.println("entro");
 			if(players.get(key).getNickName().equalsIgnoreCase(nickName)) {
 				players.remove(key, players.get(key));
+				System.out.println("entro2");
 				f=true;
 			}
 		}
