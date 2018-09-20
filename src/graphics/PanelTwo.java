@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
@@ -156,7 +157,8 @@ public class PanelTwo extends JPanel implements ActionListener {
 	
 			
 		}else if(e.getActionCommand().equals(DELETE)) {
-			
+			String nick=JOptionPane.showInputDialog("Dijite el nickname del jugador a eliminar");
+			main.deletePlayer(nick);
 		}else if(e.getActionCommand().equals(ADDPLATFORM)) {
 			main.enterPlatform();
 		}
