@@ -1,7 +1,6 @@
 package graphics;
 
 import java.awt.BorderLayout;
-import java.util.ArrayList;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -11,7 +10,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import model.Platform;
-import model.Player;
+
 public class Graphic extends JFrame{
 
 	/**
@@ -65,13 +64,7 @@ public class Graphic extends JFrame{
 	
 	public void addPlayer(String nickName,double pin, String geoLocation, int ability,int platform){
 		this.platform.addPlayer(nickName, pin, geoLocation, ability, platform);
-		
 	}
-	public ArrayList<Player> viewListPlayers() {
-		//panelOne.getPlayers().
-		return platform.convertListPlayers();
-	}
-	
 	
 	public void addArm(){
 		
