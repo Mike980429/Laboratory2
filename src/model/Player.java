@@ -1,12 +1,13 @@
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.ListIterator;
 import java.util.Stack;
 
 import javax.swing.ImageIcon;
 
-public class Player {
+public class Player implements Serializable {
 	
 	//Constantes:
 	public final static String NOOB="Novato"; 
@@ -99,7 +100,17 @@ public class Player {
 			this.platform=ADVANCED;
 		}
 	}
-	
+	public int AssingAbility() {
+		int aux=0;
+		if(this.ability.equals(NOOB)) {
+			aux=1;
+		}else if(this.ability.equals(INTERMEDIATE)) {
+			aux=2;
+		}else if(this.ability.equals(ADVANCED)) {
+			aux=3;
+		}
+		return aux;
+	}
 	public String getNickName() {
 		return nickName;
 	}

@@ -20,7 +20,7 @@ public class PanelOne extends JPanel implements ListSelectionListener{
 	private JList<Player> players;
 
 	private JPanel aux;
-	
+	private Player actual;
 	
 	public PanelOne(Graphic main) {
 		// TODO Auto-generated constructor stub
@@ -44,7 +44,10 @@ public class PanelOne extends JPanel implements ListSelectionListener{
 	public void valueChanged(ListSelectionEvent e) {
 		//e.ge
 		if(!e.getValueIsAdjusting()){
-			Player a=players.getSelectedValue();
+			actual=players.getSelectedValue();
+			main.getPanelTwo().statusPlayer(actual.getNickName(),actual.getPin(),
+					actual.getGeoLocation(),actual.getAbility(),actual.getGeoLocation());
+			
 		}
 		
 		

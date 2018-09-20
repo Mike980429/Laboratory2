@@ -18,9 +18,9 @@ import model.Player;
 public class PanelTwo extends JPanel implements ActionListener {
 
 	
-	public final static String ADD="a�adir";
+	public final static String ADD="adir";
 	public final static String DELETE="eliminar";
-	public final static String ADDPLATFORM="a�adir Plataforma";
+	public final static String ADDPLATFORM="adir Plataforma";
 	
 	private Graphic main;
 	
@@ -62,7 +62,7 @@ public class PanelTwo extends JPanel implements ActionListener {
 		deletePlayer.addActionListener(this);
 		deletePlayer.setSize(new Dimension(33,60));
 		
-		addPlatform=new JButton("Añadir a plataforma");
+		addPlatform=new JButton("adir a plataforma");
 		addPlatform.setActionCommand(ADDPLATFORM);
 		addPlatform.addActionListener(this);
 		
@@ -116,7 +116,7 @@ public class PanelTwo extends JPanel implements ActionListener {
 		join.add(auxTwo);
 		
 	}
-	public void statusPlayer(String nickName,double pin, String geoLocation, String ability,String platform,ImageIcon skin) {
+	public void statusPlayer(String nickName,double pin, String geoLocation, String ability,String platform) {
 		
 		
 		this.nickName1.setText(nickName);
@@ -152,10 +152,7 @@ public class PanelTwo extends JPanel implements ActionListener {
 				}
 			} catch (Exception e2) {
 				// TODO: handle exception
-			}
-			
-	
-			
+			}	
 		}else if(e.getActionCommand().equals(DELETE)) {
 			String nick=JOptionPane.showInputDialog("Dijite el nickname del jugador a eliminar");
 			main.deletePlayer(nick);
@@ -164,7 +161,7 @@ public class PanelTwo extends JPanel implements ActionListener {
 		}
 		
 	}
-
+	
 	public Graphic getMain() {
 		return main;
 	}
