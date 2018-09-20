@@ -1,7 +1,6 @@
 package graphics;
 
 import java.awt.BorderLayout;
-import java.util.ArrayList;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -9,10 +8,9 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.ListModel;
 
 import model.Platform;
-import model.Player;
+
 public class Graphic extends JFrame{
 
 	/**
@@ -34,7 +32,7 @@ public class Graphic extends JFrame{
 		// TODO Auto-generated constructor stub
 		
 		image=new JLabel();
-		ima=new ImageIcon("./sources/2.jpg");
+		ima=new ImageIcon("./sources/fortnite.jpg");
 		Icon c=new ImageIcon(ima.getImage());
 		image.setIcon(c);
 		this.repaint();
@@ -65,8 +63,8 @@ public class Graphic extends JFrame{
 	}
 	
 	public void addPlayer(String nickName,double pin, String geoLocation, int ability,int platform){
-		
 		this.platform.addPlayer(nickName, pin, geoLocation, ability, platform);
+<<<<<<< HEAD
 		viewListPlayers();
 
 	}
@@ -87,9 +85,13 @@ public class Graphic extends JFrame{
 		
 	
 	
+=======
+	}
+	
+>>>>>>> parent of 8019983... pulling
 	public void addArm(){
 		
-		//
+		
 	}
 	
 

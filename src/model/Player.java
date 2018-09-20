@@ -9,13 +9,13 @@ import javax.swing.ImageIcon;
 public class Player {
 	
 	//Constantes:
-	public final static String NOOB="Novato"; 
-	public final static String INTERMEDIATE="Intermedio";
-	public final static String ADVANCED="Avanzado";
+	public final static String NOOB="noob"; 
+	public final static String INTERMEDIATE="intermediate";
+	public final static String ADVANCED="advanced";
 	
-	public final static String XBOX="XBOX";
-	public final static String PC="PC";
-	public final static String PS4="PS4";
+	public final static String XBOX="advanced";
+	public final static String PC="pc";
+	public final static String PS4="ps4";
 	
 	//Relaciones:
 	private Stack<Weapon> weapons;
@@ -26,7 +26,6 @@ public class Player {
 	private String geoLocation;
 	private String ability;
 	private String platform;
-	private int status;
 	private ImageIcon skin;
 
 	
@@ -35,17 +34,13 @@ public class Player {
 		this.nickName=nickName;
 		this.pin=pin;
 		this.geoLocation=geoLocation;
-		this.status=ability+platform;
 		assingPlatform(platform);
 		assingAbility(ability);
 	
 		weapons=new Stack<Weapon>();
 		weapons.push(new Weapon());
 	}
-	public int getStatus() {
-		return status;
-	} 
-	
+
 	public void addWeapon(String type,int numBullets) {
 		if(numBullets!=0) {
 			weapons.push(new Weapon(type,numBullets));
@@ -84,12 +79,17 @@ public class Player {
 	public ArrayList convertListWeapon() {
 		ArrayList<Weapon> listWeapon=new ArrayList<Weapon>();
 		ListIterator<Weapon> weapon=weapons.listIterator();
+<<<<<<< HEAD
+=======
+		
+>>>>>>> parent of 8019983... pulling
 		while (weapon.hasNext()) {
 		listWeapon.add(weapon.next());
 			
 		}
 		return listWeapon;
 	}
+	
 	public void assingAbility(int ability) {
 		if(ability==1) {
 			this.ability=NOOB;
@@ -143,7 +143,7 @@ public class Player {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		String mensaje=this.nickName+" / "+this.ability+" / "+this.platform+" / # Ping: "+this.pin+" / "+this.geoLocation;
+		String mensaje=this.nickName+""+this.platform+" "+this.pin+" "+this.geoLocation+" Numero ";
 		return mensaje;
 	}
 }
