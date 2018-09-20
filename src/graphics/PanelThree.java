@@ -98,7 +98,7 @@ public class PanelThree extends JDialog implements ActionListener, ListSelection
 		if(e.getActionCommand().equals(RETURN)) {
 			this.setVisible(false);
 		}else if(e.getActionCommand().equals(SHOOT)) {
-			
+			main.shoot();
 		}
 		
 	}

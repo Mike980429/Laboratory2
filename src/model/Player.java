@@ -27,19 +27,43 @@ public class Player implements Serializable {
 	private String geoLocation;
 	private String ability;
 	private String platform;
+	private Player sig;
+	private Player ant;
 	private ImageIcon skin;
 
 	
-	public Player(String nickName,double pin, String geoLocation, int ability,int platform) {
+	public Player(String nickName,double pin, String geoLocation, int ability,int platform,Player sig,Player ant) {
 		// TODO Auto-generated constructor stub
 		this.nickName=nickName;
 		this.pin=pin;
 		this.geoLocation=geoLocation;
+		this.sig= sig;
+		this.ant= ant;
 		assingPlatform(platform);
 		assingAbility(ability);
 	
 		weapons=new Stack<Weapon>();
 		weapons.push(new Weapon());
+	}
+
+	public void setSig(Player sig) {
+		this.sig = sig;
+	}
+
+	public void setAnt(Player ant) {
+		this.ant = ant;
+	}
+
+	public Player getSig() {
+		return sig;
+	}
+
+	public Player getAnt() {
+		return ant;
+	}
+
+	public String getPlatform() {
+		return platform;
 	}
 
 	public void addWeapon(String type,int numBullets) {
