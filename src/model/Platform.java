@@ -1,8 +1,11 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 
 import javax.swing.ImageIcon;
+
 
 public class Platform {
 
@@ -25,8 +28,14 @@ public class Platform {
 	public HashMap<String, Player> getPlayers() {
 		return players;
 	}
-	public void convertListPlayers() {
-	//	players.keySet()
+	public ArrayList<Player> convertListPlayers() {
+		ArrayList<Player> listPlayer=new ArrayList<Player>();
+		
+		Iterator<String> iterator=players.keySet().iterator();
+		while(iterator.hasNext()) {
+			String key=iterator.next();
+		}
+		return listPlayer;
 	}
 	
 	

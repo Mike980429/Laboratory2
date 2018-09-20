@@ -147,7 +147,6 @@ public class PanelTwo extends JPanel implements ActionListener {
 				}else {
 					main.addPlayer(nickName1.getText(),Double.parseDouble(pin1.getText()), geoLocation1.getText(),Integer.parseInt(ability1.getText()),Integer.parseInt(platform1.getText()));
 					this.statusEntry(false);
-					
 				}
 			} catch (Exception e2) {
 				// TODO: handle exception
