@@ -34,7 +34,7 @@ public class Graphic extends JFrame{
 		// TODO Auto-generated constructor stub
 		
 		image=new JLabel();
-		ima=new ImageIcon("./sources/fortnite.jpg");
+		ima=new ImageIcon("./sources/2.jpg");
 		Icon c=new ImageIcon(ima.getImage());
 		image.setIcon(c);
 		this.repaint();
