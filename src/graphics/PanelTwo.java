@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
@@ -147,16 +148,17 @@ public class PanelTwo extends JPanel implements ActionListener {
 				}else {
 					main.addPlayer(nickName1.getText(),Double.parseDouble(pin1.getText()), geoLocation1.getText(),Integer.parseInt(ability1.getText()),Integer.parseInt(platform1.getText()));
 					this.statusEntry(false);
-					
 				}
 			} catch (Exception e2) {
 				// TODO: handle exception
+				JOptionPane.showMessageDialog(null, "Ingrese bien los valores en cada campo de texto.");
 			}
 			
 	
 			
 		}else if(e.getActionCommand().equals(DELETE)) {
-			
+			String nick=JOptionPane.showInputDialog(null, "Dijite el Nickname del jugador a eliminar");
+			main.deletePlayer(nick);
 		}else if(e.getActionCommand().equals(ADDPLATFORM)) {
 			main.enterPlatform();
 		}
