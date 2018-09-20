@@ -80,6 +80,7 @@ public class Player {
 		ArrayList<Weapon> listWeapon=new ArrayList<Weapon>();
 		ListIterator<Weapon> weapon=weapons.listIterator();
 		
+		
 		while (weapon.hasNext()) {
 		listWeapon.add(weapon.next());
 			
@@ -140,7 +141,7 @@ public class Player {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		String mensaje=this.nickName+" / "+this.ability+" / "+this.platform+" / # Ping"+this.pin+" / "+this.geoLocation;
+		String mensaje=this.nickName+" / "+this.ability+" / "+this.platform+" / # Ping: "+this.pin+" / "+this.geoLocation;
 		return mensaje;
 	}
 }

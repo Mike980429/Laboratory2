@@ -67,15 +67,17 @@ public class Graphic extends JFrame{
 	public void addPlayer(String nickName,double pin, String geoLocation, int ability,int platform){
 		
 		this.platform.addPlayer(nickName, pin, geoLocation, ability, platform);
-		Player[] s=viewListPlayers().toArray(new Player[viewListPlayers().size()]);
+		viewListPlayers();
+
+	}
+	public void viewListPlayers() {
+		Player[] s=platform.convertListPlayers().toArray(new Player[platform.convertListPlayers().size()]);
 		panelOne.getPlayers().setListData(s);
-
 	}
-	public ArrayList<Player> viewListPlayers() {
-	
-		return platform.convertListPlayers();
+	public void deletePlayer(String nickName) {
+		platform.deletePlayer(nickName);
+		viewListPlayers();
 	}
-
 	
 	public void addArm(){
 		
