@@ -27,7 +27,6 @@ public class Player implements Serializable {
 	private String geoLocation;
 	private String ability;
 	private String platform;
-	private int status;
 	private ImageIcon skin;
 
 	
@@ -36,17 +35,13 @@ public class Player implements Serializable {
 		this.nickName=nickName;
 		this.pin=pin;
 		this.geoLocation=geoLocation;
-		this.status=ability+platform;
 		assingPlatform(platform);
 		assingAbility(ability);
 	
 		weapons=new Stack<Weapon>();
 		weapons.push(new Weapon());
 	}
-	public int getStatus() {
-		return status;
-	} 
-	
+
 	public void addWeapon(String type,int numBullets) {
 		if(numBullets!=0) {
 			weapons.push(new Weapon(type,numBullets));
