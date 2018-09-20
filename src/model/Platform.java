@@ -43,7 +43,19 @@ public class Platform {
 		return listPlayer;
 	}
 	
-	
+	public int searchPlayer(String nickName) {
+		int pos=0;
+		Iterator<Integer> iterator=players.keySet().iterator();
+		boolean f=false;
+		while(iterator.hasNext()&&!f) {
+			int key=iterator.next();
+			if(players.get(key).getNickName().equalsIgnoreCase(nickName)) {
+				pos=key;
+				f=true;
+			}
+		}
+		return pos;
+	}
 	
 	public void deletePlayer(String nickName) {
 		Iterator<Integer> iterator=players.keySet().iterator();
