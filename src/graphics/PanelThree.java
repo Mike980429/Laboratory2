@@ -11,11 +11,13 @@ import javax.swing.JDialog;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 
 import model.Player;
 import model.Weapon;
 
-public class PanelThree extends JDialog implements ActionListener{
+public class PanelThree extends JDialog implements ActionListener, ListSelectionListener{
 
 	/**
 	 * 
@@ -24,9 +26,14 @@ public class PanelThree extends JDialog implements ActionListener{
 	
 	public static final String SHOOT="disparar";
 	public static final String RETURN="volver";
+	public static final String ADDWEAPON="agregarArma";
+	
+	public static final String LISTP="lista jugadores";
+	public static final String LISTW="lista armas";
 	
 	private JButton shoot;
 	private JButton returnMenu;
+	private JButton addWeapon;
 	
 	
 	private JList<Player> players;
@@ -36,7 +43,7 @@ public class PanelThree extends JDialog implements ActionListener{
 	
 	private JPanel aux;
 	private JPanel auxOne;
-	
+	private Player actual;
 	
 	public PanelThree(Graphic main) {
 		// TODO Auto-generated constructor stub
@@ -54,9 +61,17 @@ public class PanelThree extends JDialog implements ActionListener{
 		returnMenu.setActionCommand(RETURN);
 		returnMenu.addActionListener(this);
 		
+		addWeapon=new JButton("Agregar arma");
+		addWeapon.setActionCommand(ADDWEAPON);
+		addWeapon.addActionListener(this);
+		
+		
 		players=new JList<Player>();
+		players.addListSelectionListener(this);
+		
 		//players.setSize(new Dimension(60,60));
 		weapons=new JList<Weapon>();
+		weapons.addListSelectionListener(this);
 		
 		addPanel();
 		add(aux);
@@ -66,8 +81,9 @@ public class PanelThree extends JDialog implements ActionListener{
 	
 	public void addPanel() {
 		
-		JPanel a=new JPanel(new GridLayout(1,2));
+		JPanel a=new JPanel(new GridLayout(1,3));
 		a.add(shoot);
+		a.add(addWeapon);
 		a.add(returnMenu);
 		auxOne.add(weapons);
 		auxOne.add(a);
@@ -82,6 +98,18 @@ public class PanelThree extends JDialog implements ActionListener{
 		if(e.getActionCommand().equals(RETURN)) {
 			this.setVisible(false);
 		}else if(e.getActionCommand().equals(SHOOT)) {
+			
+		}
+		
+	}
+	
+	@Override
+	public void valueChanged(ListSelectionEvent e) {
+		// TODO Auto-generated method stub
+		if(!e.getValueIsAdjusting()){
+			actual=players.getSelectedValue();
+			main.getPanelTwo().statusPlayer(actual.getNickName(),actual.getPin(),
+					actual.getGeoLocation(),actual.getAbility(),actual.getGeoLocation());
 			
 		}
 		
