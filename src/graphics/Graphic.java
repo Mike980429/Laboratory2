@@ -62,8 +62,8 @@ public class Graphic extends JFrame{
 		
 	}
 	
-	public void addPlayer(String nickName,double pin, String geoLocation, int ability,int platform,ImageIcon skin){
-		this.platform.addPlayer(nickName, pin, geoLocation, ability, platform, skin);
+	public void addPlayer(String nickName,double pin, String geoLocation, int ability,int platform){
+		this.platform.addPlayer(nickName, pin, geoLocation, ability, platform);
 	}
 	
 	public void addArm(){
