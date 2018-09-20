@@ -1,11 +1,8 @@
 package model;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 
 import javax.swing.ImageIcon;
-
 
 public class Platform {
 
@@ -28,16 +25,48 @@ public class Platform {
 	public HashMap<String, Player> getPlayers() {
 		return players;
 	}
+<<<<<<< HEAD
+
+	
+
+	
 	public ArrayList<Player> convertListPlayers() {
 		ArrayList<Player> listPlayer=new ArrayList<Player>();
 		
-		Iterator<String> iterator=players.keySet().iterator();
+		Iterator<Integer> iterator=players.keySet().iterator();
 		while(iterator.hasNext()) {
-			String key=iterator.next();
+			int key=iterator.next();
+			if(true) {
+				
+			}
+			listPlayer.add(players.get(key));
 		}
 		return listPlayer;
+
 	}
 	
+	
+	
+	public void deletePlayer(String nickName) {
+		Iterator<Integer> iterator=players.keySet().iterator();
+		boolean f=false;
+		while(iterator.hasNext()&&!f) {
+			int key=iterator.next();
+			
+			if(players.get(key).getNickName().equalsIgnoreCase(nickName)) {
+				players.remove(key, players.get(key));
+			
+				f=true;
+			}
+		}
+		
+	}
+=======
+	public void convertListPlayers() {
+	//	players.keySet()
+	}
+	
+>>>>>>> parent of 8019983... pulling
 	
 	
 }

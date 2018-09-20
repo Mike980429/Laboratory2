@@ -76,10 +76,13 @@ public class Player {
 		}
 	}
 	
-	public ArrayList convertList() {
+	public ArrayList convertListWeapon() {
 		ArrayList<Weapon> listWeapon=new ArrayList<Weapon>();
 		ListIterator<Weapon> weapon=weapons.listIterator();
+<<<<<<< HEAD
+=======
 		
+>>>>>>> parent of 8019983... pulling
 		while (weapon.hasNext()) {
 		listWeapon.add(weapon.next());
 			
