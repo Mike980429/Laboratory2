@@ -23,12 +23,11 @@ public class PanelThree extends JDialog implements ActionListener{
 	private static final long serialVersionUID = 1L;
 	
 	public static final String SHOOT="disparar";
-	public static final String ADDWEAPON="agregarArma";
 	public static final String RETURN="volver";
 	
 	private JButton shoot;
 	private JButton returnMenu;
-	private JButton addWeapon;
+	
 	
 	private JList<Player> players;
 	private Graphic main;
@@ -51,10 +50,6 @@ public class PanelThree extends JDialog implements ActionListener{
 		shoot.setActionCommand(SHOOT);
 		shoot.addActionListener(this);
 		
-		addWeapon=new JButton("Agregar arma");
-		addWeapon.setActionCommand(ADDWEAPON);
-		addWeapon.addActionListener(this);
-		
 		returnMenu=new JButton("Volver al menu");
 		returnMenu.setActionCommand(RETURN);
 		returnMenu.addActionListener(this);
@@ -71,9 +66,8 @@ public class PanelThree extends JDialog implements ActionListener{
 	
 	public void addPanel() {
 		
-		JPanel a=new JPanel(new GridLayout(1,3));
+		JPanel a=new JPanel(new GridLayout(1,2));
 		a.add(shoot);
-		a.add(addWeapon);
 		a.add(returnMenu);
 		auxOne.add(weapons);
 		auxOne.add(a);
@@ -88,8 +82,6 @@ public class PanelThree extends JDialog implements ActionListener{
 		if(e.getActionCommand().equals(RETURN)) {
 			this.setVisible(false);
 		}else if(e.getActionCommand().equals(SHOOT)) {
-			
-		}else if(e.getActionCommand().equals(ADDWEAPON)) {
 			
 		}
 		
