@@ -81,7 +81,7 @@ public class Graphic extends JFrame{
 	
 	public void addArm(){
 		
-		
+		//
 	}
 	
 
