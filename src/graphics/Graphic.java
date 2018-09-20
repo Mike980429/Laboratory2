@@ -2,6 +2,7 @@ package graphics;
 
 import java.awt.BorderLayout;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -91,6 +92,16 @@ public class Graphic extends JFrame{
 	
 	public static void main(String []ventana) {
 		Graphic graphics=new Graphic();
+		
+	}
+
+	public void shoot() {
+		ArrayList<Player> array= platform.clasifyPlataform();
+		
+		for(Player p: array){
+			System.out.println(p.getPlatform());
+		}
+		
 		
 	}
 

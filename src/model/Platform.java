@@ -17,13 +17,13 @@ import javax.swing.ImageIcon;
 public class Platform {
 
 	
-	private HashMap<Integer[], Player> players;
+	private HashMap<Integer, Player> players;
 	//private HashMap<String,players> playersOne;
 	
 	
 	public Platform() {
 		// TODO Auto-generated constructor stub
-		players=new HashMap<Integer[],Player>();
+		players=new HashMap<Integer,Player>();
 		readPlayersSerializable();
 		
 		
@@ -53,7 +53,7 @@ public class Platform {
 			FileInputStream fileInput= new FileInputStream(new File("./sources/players.txt"));
 			ObjectInputStream objectInput= new ObjectInputStream(fileInput);
 			
-			players= (HashMap<Integer[], Player>) objectInput.readObject();
+			players= (HashMap<Integer, Player>) objectInput.readObject();
 			objectInput.close();
 		}catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -68,35 +68,52 @@ public class Platform {
 	}
 	
 	public void addPlayer(String nickName,double pin, String geoLocation, int ability,int platform) {
-		Player aux=new Player(nickName,pin,geoLocation,ability,platform);
-		Integer[] array={platform,ability};
-		players.put(array, aux);
+		if(players.containsKey(platform)){
+			Player last= lastPlayerPlatform(platform);
+			Player newP= new Player(nickName, pin, geoLocation, ability, platform, null, last);
+			last.setSig(newP);
+		}else{			
+			players.put(platform, new Player(nickName, pin, geoLocation, ability, platform, null, null));
+		}
 	}
 	
-	public HashMap<Integer[], Player> getPlayers() {
+	public Player lastPlayerPlatform(Integer key){
+		Player actual= players.get(key);
+		while(actual.getSig()!=null){
+			actual= actual.getSig();
+		}
+		return actual;
+	}
+	
+	public HashMap<Integer, Player> getPlayers() {
 		return players;
 	}
 	
 	public ArrayList<Player> convertListPlayers() {
 		ArrayList<Player> listPlayer=new ArrayList<Player>();
 		
-		Iterator<Integer[]> iterator=players.keySet().iterator();
+		Iterator<Integer> iterator= players.keySet().iterator();
 		while(iterator.hasNext()) {
-			Integer[] key=iterator.next();
-			if(true) {
-				
+			Integer key=iterator.next();
+			Player actual= players.get(key);
+			
+			while(actual.getSig()!=null){
+				listPlayer.add(actual);
+				actual= actual.getSig();
 			}
-			listPlayer.add(players.get(key));
+			listPlayer.add(actual);
+			
+			
 		}
 		return listPlayer;
 	}
 	
-	public Integer[] searchPlayer(String nickName) {
-		Integer[] pos={0,0};
-		Iterator<Integer[]> iterator=players.keySet().iterator();
+	public Integer searchPlayer(String nickName) {
+		Integer pos=0;
+		Iterator<Integer> iterator=players.keySet().iterator();
 		boolean f=false;
 		while(iterator.hasNext()&&!f) {
-			Integer[] key=iterator.next();
+			Integer key=iterator.next();
 			if(players.get(key).getNickName().equalsIgnoreCase(nickName)) {
 				pos=key;
 				f=true;
@@ -106,18 +123,51 @@ public class Platform {
 	}
 	
 	public void deletePlayer(String nickName) {
-		Iterator<Integer[]> iterator=players.keySet().iterator();
+		Iterator<Integer> iterator=players.keySet().iterator();
 		boolean f=false;
 		while(iterator.hasNext()&&!f) {
-			Integer[] key=iterator.next();
+			Integer key=iterator.next();
+			Player actual= players.get(key);
 			
-			if(players.get(key).getNickName().equalsIgnoreCase(nickName)) {
-				players.remove(key, players.get(key));
-			
+			if(actual.getNickName().equalsIgnoreCase(nickName)) {
+				if(actual.getSig()==null){
+					players.remove(key, actual);
+				}else{
+					players.put(key, actual.getSig());
+					actual.getSig().setAnt(null);
+					actual.setSig(null);			
+				}
 				f=true;
+			}else{
+					while(actual!=null){
+					if(actual.getNickName().equalsIgnoreCase(nickName)) {
+						if(actual.getSig()!=null){							
+							actual.getAnt().setSig(actual.getSig());
+							actual.getSig().setAnt(actual.getAnt());
+							actual.setSig(null);			
+						}else{
+							actual.getAnt().setSig(null);
+							actual.setSig(null);
+						}
+						f=true;
+					}
+					actual= actual.getSig();
+				}
 			}
 		}
 		
+	}
+	
+	
+	public ArrayList<Player> clasifyPlataform(){
+		ArrayList<Player> array= new ArrayList<>();
+		Iterator<Integer> iterator=players.keySet().iterator();
+		while(iterator.hasNext()) {
+			Integer key=iterator.next();
+			array.add(players.get(key));
+		}		
+		
+		return array;
 	}
 	
 	
