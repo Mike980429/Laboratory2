@@ -1,5 +1,7 @@
 package model;
 
+import java.util.ArrayList;
+import java.util.ListIterator;
 import java.util.Stack;
 
 import javax.swing.ImageIcon;
@@ -27,14 +29,14 @@ public class Player {
 	private ImageIcon skin;
 
 	
-	public Player(String nickName,double pin, String geoLocation, int ability,int platform,ImageIcon skin) {
+	public Player(String nickName,double pin, String geoLocation, int ability,int platform) {
 		// TODO Auto-generated constructor stub
 		this.nickName=nickName;
 		this.pin=pin;
 		this.geoLocation=geoLocation;
 		assingPlatform(platform);
 		assingAbility(ability);
-		this.skin=skin;
+	
 		weapons=new Stack<Weapon>();
 		weapons.push(new Weapon());
 	}
@@ -72,6 +74,17 @@ public class Player {
 		}else if(platform==3) {
 			this.platform=PS4;
 		}
+	}
+	
+	public ArrayList convertList() {
+		ArrayList<Weapon> listWeapon=new ArrayList<Weapon>();
+		ListIterator<Weapon> weapon=weapons.listIterator();
+		
+		while (weapon.hasNext()) {
+		listWeapon.add(weapon.next());
+			
+		}
+		return listWeapon;
 	}
 	
 	public void assingAbility(int ability) {

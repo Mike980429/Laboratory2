@@ -17,15 +17,18 @@ public class Platform {
 		
 		
 	}
-	public void addPlayer(String nickName,double pin, String geoLocation, int ability,int platform,ImageIcon image) {
-		Player aux=new Player(nickName,pin,geoLocation,ability,platform,image);
+	public void addPlayer(String nickName,double pin, String geoLocation, int ability,int platform) {
+		Player aux=new Player(nickName,pin,geoLocation,ability,platform);
 		players.put(aux.getAbility(), aux);
 	}
 	
 	public HashMap<String, Player> getPlayers() {
 		return players;
 	}
-		
+	public void convertListPlayers() {
+	//	players.keySet()
+	}
+	
 	
 	
 }
