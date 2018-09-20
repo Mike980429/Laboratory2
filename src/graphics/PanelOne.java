@@ -42,4 +42,44 @@ public class PanelOne extends JPanel implements ListSelectionListener{
 		
 	}
 
+
+	public Graphic getMain() {
+		return main;
+	}
+
+
+	public void setMain(Graphic main) {
+		this.main = main;
+	}
+
+
+	public JScrollPane getScroll() {
+		return scroll;
+	}
+
+
+	public void setScroll(JScrollPane scroll) {
+		this.scroll = scroll;
+	}
+
+
+	public JList<Player> getPlayers() {
+		return players;
+	}
+
+
+	public void setPlayers(JList<Player> players) {
+		this.players = players;
+	}
+
+
+	public JPanel getAux() {
+		return aux;
+	}
+
+
+	public void setAux(JPanel aux) {
+		this.aux = aux;
+	}
+	
 }
