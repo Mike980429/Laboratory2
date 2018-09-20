@@ -67,15 +67,6 @@ public class Graphic extends JFrame{
 	public void addPlayer(String nickName,double pin, String geoLocation, int ability,int platform){
 		
 		this.platform.addPlayer(nickName, pin, geoLocation, ability, platform);
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 62a770e77e010180420b469582f7924b21b9f22d
-=======
->>>>>>> 62a770e77e010180420b469582f7924b21b9f22d
 		viewListPlayers();
 
 	}
@@ -83,26 +74,15 @@ public class Graphic extends JFrame{
 		Player[] s=platform.convertListPlayers().toArray(new Player[platform.convertListPlayers().size()]);
 		panelOne.getPlayers().setListData(s);
 	}
+	
+	
 	public void deletePlayer(String nickName) {
 		platform.deletePlayer(nickName);
 		viewListPlayers();
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 62a770e77e010180420b469582f7924b21b9f22d
+
 	}
-=======
 		
-	}
-	public ArrayList<Player> viewListPlayers() {
-		//panelOne.getPlayers().
-		return platform.convertListPlayers();
-=======
->>>>>>> 62a770e77e010180420b469582f7924b21b9f22d
-=======
->>>>>>> 62a770e77e010180420b469582f7924b21b9f22d
-	}
 	
->>>>>>> parent of 302fcce... Progressing x3
 	
 	public void addArm(){
 		
