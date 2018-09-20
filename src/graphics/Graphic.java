@@ -52,6 +52,7 @@ public class Graphic extends JFrame{
 		//panelAux.add(panelThree,BorderLayout.SOUTH);
 		add(panelAux);
 		setVisible(true);
+		viewListPlayers();
 		//pack();
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		pack();

@@ -1,9 +1,11 @@
 package model;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -22,6 +24,7 @@ public class Platform {
 	public Platform() {
 		// TODO Auto-generated constructor stub
 		players=new HashMap<Integer,Player>();
+		readPlayersSerializable();
 		
 		
 	}
@@ -43,6 +46,25 @@ public class Platform {
 			e.printStackTrace();
 		}
 		
+	}
+	
+	public void readPlayersSerializable(){
+		try{
+			FileInputStream fileInput= new FileInputStream(new File("./sources/players.txt"));
+			ObjectInputStream objectInput= new ObjectInputStream(fileInput);
+			
+			players= (HashMap<Integer, Player>) objectInput.readObject();
+			objectInput.close();
+		}catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	public void addPlayer(String nickName,double pin, String geoLocation, int ability,int platform) {
