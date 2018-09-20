@@ -1,12 +1,13 @@
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.ListIterator;
 import java.util.Stack;
 
 import javax.swing.ImageIcon;
 
-public class Player {
+public class Player implements Serializable {
 	
 	//Constantes:
 	public final static String NOOB="Novato"; 

@@ -1,6 +1,8 @@
 package model;
 
-public class Weapon {
+import java.io.Serializable;
+
+public class Weapon implements Serializable{
 
 	private String type;
 	private int numBullets;

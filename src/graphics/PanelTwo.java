@@ -18,9 +18,9 @@ import model.Player;
 public class PanelTwo extends JPanel implements ActionListener {
 
 	
-	public final static String ADD="aï¿½adir";
+	public final static String ADD="añadir";
 	public final static String DELETE="eliminar";
-	public final static String ADDPLATFORM="aï¿½adir Plataforma";
+	public final static String ADDPLATFORM="añadir Plataforma";
 	
 	private Graphic main;
 	
@@ -62,7 +62,7 @@ public class PanelTwo extends JPanel implements ActionListener {
 		deletePlayer.addActionListener(this);
 		deletePlayer.setSize(new Dimension(33,60));
 		
-		addPlatform=new JButton("AÃ±adir a plataforma");
+		addPlatform=new JButton("Añadir a plataforma");
 		addPlatform.setActionCommand(ADDPLATFORM);
 		addPlatform.addActionListener(this);
 		

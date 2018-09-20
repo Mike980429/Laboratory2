@@ -66,7 +66,7 @@ public class Graphic extends JFrame{
 	
 	public void addPlayer(String nickName,double pin, String geoLocation, int ability,int platform){
 		
-		this.platform.addPlayer(nickName, pin, geoLocation, ability, platform);
+		this.platform.savePlayerSerializable(nickName, pin, geoLocation, ability, platform);
 		viewListPlayers();
 
 	}
