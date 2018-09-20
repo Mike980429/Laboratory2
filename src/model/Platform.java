@@ -31,6 +31,7 @@ public class Platform {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	public void convertListPlayers() {
 	//	players.keySet()
 =======
@@ -44,6 +45,8 @@ public class Platform {
 		return listPlayer;
 >>>>>>> parent of 302fcce... Progressing x3
 =======
+=======
+>>>>>>> 62a770e77e010180420b469582f7924b21b9f22d
 =======
 >>>>>>> 62a770e77e010180420b469582f7924b21b9f22d
 	
@@ -60,6 +63,9 @@ public class Platform {
 		}
 		return listPlayer;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 62a770e77e010180420b469582f7924b21b9f22d
+=======
 >>>>>>> 62a770e77e010180420b469582f7924b21b9f22d
 =======
 >>>>>>> 62a770e77e010180420b469582f7924b21b9f22d

@@ -70,7 +70,10 @@ public class Graphic extends JFrame{
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 62a770e77e010180420b469582f7924b21b9f22d
 =======
 >>>>>>> 62a770e77e010180420b469582f7924b21b9f22d
 		viewListPlayers();
@@ -84,6 +87,7 @@ public class Graphic extends JFrame{
 		platform.deletePlayer(nickName);
 		viewListPlayers();
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 62a770e77e010180420b469582f7924b21b9f22d
 	}
 =======
@@ -92,6 +96,8 @@ public class Graphic extends JFrame{
 	public ArrayList<Player> viewListPlayers() {
 		//panelOne.getPlayers().
 		return platform.convertListPlayers();
+=======
+>>>>>>> 62a770e77e010180420b469582f7924b21b9f22d
 =======
 >>>>>>> 62a770e77e010180420b469582f7924b21b9f22d
 	}
