@@ -1,6 +1,7 @@
 package model;
 
-
+<<<<<<< HEAD
+<<<<<<< HEAD
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -10,12 +11,17 @@ import java.io.ObjectInputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
+=======
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+>>>>>>> ed09a7c962db3a028f9f42b04a3268f8d9fb3261
+=======
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+>>>>>>> 302fcce3d10eb5f35f323d9603d5f7a8219076c0
+
 import javax.swing.ImageIcon;
 
 
@@ -85,10 +91,13 @@ public class Platform {
 		Iterator<String> iterator=players.keySet().iterator();
 		while(iterator.hasNext()) {
 			String key=iterator.next();
-
+<<<<<<< HEAD
+		}
+=======
 			listPlayer.add(players.get(key));
 		}
 		System.out.println(listPlayer.get(0).getAbility());
+>>>>>>> 302fcce3d10eb5f35f323d9603d5f7a8219076c0
 		return listPlayer;
 	}
 	
