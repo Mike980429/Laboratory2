@@ -6,11 +6,15 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDialog;
+import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.border.TitledBorder;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
@@ -50,7 +54,7 @@ public class PanelThree extends JDialog implements ActionListener, ListSelection
 		
 		this.main=main;
 		
-		aux=new JPanel(new GridLayout(1,2));
+		aux=new JPanel(new BorderLayout());
 		auxOne=new JPanel(new GridLayout(2,1));
 		
 		shoot=new JButton("Disparar");
@@ -71,7 +75,9 @@ public class PanelThree extends JDialog implements ActionListener, ListSelection
 		
 		//players.setSize(new Dimension(60,60));
 		weapons=new JList<Weapon>();
-		weapons.addListSelectionListener(this);
+		
+		
+
 		
 		addPanel();
 		add(aux);
@@ -82,13 +88,21 @@ public class PanelThree extends JDialog implements ActionListener, ListSelection
 	public void addPanel() {
 		
 		JPanel a=new JPanel(new GridLayout(1,3));
+		a.setBorder(new TitledBorder("Lista Armas Juego"));
 		a.add(shoot);
 		a.add(addWeapon);
 		a.add(returnMenu);
 		auxOne.add(weapons);
 		auxOne.add(a);
-		aux.add(players);
-		aux.add(auxOne);
+		aux.add(players,BorderLayout.CENTER);
+		
+		JLabel image=new JLabel();
+		ImageIcon ima=new ImageIcon("./sources/1.jpg");
+		Icon c=new ImageIcon(ima.getImage());
+		image.setIcon(c);
+		aux.setBorder(new TitledBorder("Listado de jugadores en Partida"));
+		aux.add(auxOne,BorderLayout.EAST);
+		aux.add(image,BorderLayout.NORTH);
 		
 	}
 
@@ -98,21 +112,49 @@ public class PanelThree extends JDialog implements ActionListener, ListSelection
 		if(e.getActionCommand().equals(RETURN)) {
 			this.setVisible(false);
 		}else if(e.getActionCommand().equals(SHOOT)) {
-			main.shoot();
+
+			try {
+				actual.shootPlayer();
+				main.viewListWeapon();
+				
+				} catch (Exception e1) {
+					JOptionPane.showMessageDialog(null,"Seleccione el jugador");
+			}
+			
+		}else if(e.getActionCommand().equals(ADDWEAPON)) {
+			String type=JOptionPane.showInputDialog(null,"Dijite el tipo de arma: ");
+			String numBullets=JOptionPane.showInputDialog(null,"Dijite numero de balas: ");
+			actual.addWeapon(type, Integer.parseInt(numBullets));
+			main.viewListWeapon();
+			
 		}
 		
 	}
+	public Player getActual() {
+		return actual;
+	}
+	
+	
 	
 	@Override
 	public void valueChanged(ListSelectionEvent e) {
 		// TODO Auto-generated method stub
 		if(!e.getValueIsAdjusting()){
 			actual=players.getSelectedValue();
-			main.getPanelTwo().statusPlayer(actual.getNickName(),actual.getPin(),
-					actual.getGeoLocation(),actual.getAbility(),actual.getGeoLocation());
+			main.viewListWeapon();
 			
+		}else {
+			actual=main.getPanelOne().getActual();
 		}
 		
+	}
+	
+	public JList getPlayers() {
+		return players;
+	}
+	
+	public JList getWeapons() {
+		return weapons;
 	}
 
 }

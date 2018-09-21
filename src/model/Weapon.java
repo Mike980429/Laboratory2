@@ -39,11 +39,19 @@ public class Weapon implements Serializable{
 	public void setAx(boolean isAx) {
 		this.isAx = isAx;
 	}
+	public void shoot() {
+		if(this.isAx==false) {
+			if(this.numBullets!=0) {
+				this.numBullets=this.numBullets-1;
+			}
+		}
+	}
+	
 	
 @Override
 public String toString() {
 	// TODO Auto-generated method stub
-	String message=this.type+"  "+this.numBullets+"  "+this.isAx;
+	String message="Tipo de Arma: "+this.type+"     Numero de balas: "+this.numBullets+"  ";
 	return message;
 }
 

@@ -55,7 +55,9 @@ public class PanelOne extends JPanel implements ListSelectionListener{
 		
 	}
 
-
+	public Player getActual() 	{
+		return actual;
+	}
 	public Graphic getMain() {
 		return main;
 	}
