@@ -14,6 +14,7 @@ import javax.swing.ListModel;
 
 import model.Platform;
 import model.Player;
+import model.Weapon;
 public class Graphic extends JFrame{
 
 	/**
@@ -94,15 +95,28 @@ public class Graphic extends JFrame{
 		Graphic graphics=new Graphic();
 		
 	}
+	public void viewListWeapon() {
 
+		Weapon []s=(Weapon[]) panelThree.getActual().convertListWeapon().toArray(new Weapon[panelThree.getActual().convertListWeapon().size()]);
+		panelThree.getWeapons().setListData(s);
+	}
+	public PanelOne getPanelOne() {
+		return panelOne;
+	}
+	
 	public void shoot() {
-		ArrayList<Player> array= platform.clasifyPlataform();
-		
-		for(Player p: array){
-			System.out.println(p.getPlatform());
+		try {
+			platform.searchPlayerForShoot(panelThree.getActual().getNickName());
+			viewListWeapon();
+		} catch (Exception e) {
+			// TODO: handle exception
+			JOptionPane.showConfirmDialog(null,"El Arma que estaba utilizando fue eliminada por falta de balas.");
 		}
-		
+
 		
 	}
-
+	public void viewListPlayers1() {
+		Player[] s=platform.convertListPlayers().toArray(new Player[platform.convertListPlayers().size()]);
+		panelThree.getPlayers().setListData(s);
+	}
 }

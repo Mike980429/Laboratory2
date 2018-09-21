@@ -72,19 +72,22 @@ public class Player implements Serializable {
 		}	
 	}
 	
-	public void deleteWeaponAutomatic() {
-		if(weapons.firstElement().isAx()==false) {
-			if(weapons.firstElement().getNumBullets()==0) {
+	public boolean deleteWeaponAutomatic() {
+		boolean status=false;
+		if(weapons.lastElement().isAx()==false) {
+			if(weapons.lastElement().getNumBullets()==0) {
 				weapons.pop();
+				status=true;
 			}
 		}
+			return status;
 	}
-	public void shootPlayer(){
-		if(weapons.firstElement().isAx()==false){
-			if(weapons.firstElement().getNumBullets()!=0){
-				weapons.firstElement().setNumBullets(weapons.firstElement().getNumBullets()-1);
-			}
+	public void shootPlayer() throws Exception{
+		weapons.lastElement().shoot();
+		if(deleteWeaponAutomatic()) {
+			throw new Exception(" ");
 		}
+		
 	}
 	
 	public Stack<Weapon> getWeapons() {

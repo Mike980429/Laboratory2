@@ -71,7 +71,6 @@ public class PanelThree extends JDialog implements ActionListener, ListSelection
 		
 		//players.setSize(new Dimension(60,60));
 		weapons=new JList<Weapon>();
-		weapons.addListSelectionListener(this);
 		
 		addPanel();
 		add(aux);
@@ -98,21 +97,47 @@ public class PanelThree extends JDialog implements ActionListener, ListSelection
 		if(e.getActionCommand().equals(RETURN)) {
 			this.setVisible(false);
 		}else if(e.getActionCommand().equals(SHOOT)) {
-			main.shoot();
+			
+			
+			try {
+				actual.shootPlayer();
+			} catch (Exception e1) {
+			}
+			main.viewListWeapon();
+		}else if(e.getActionCommand().equals(ADDWEAPON)) {
+			String type=JOptionPane.showInputDialog(null,"Dijite el tipo de arma: ");
+			String numBullets=JOptionPane.showInputDialog(null,"Dijite numero de balas: ");
+			actual.addWeapon(type, Integer.parseInt(numBullets));
+			main.viewListWeapon();
+			
 		}
 		
 	}
+	public Player getActual() {
+		return actual;
+	}
+	
+	
 	
 	@Override
 	public void valueChanged(ListSelectionEvent e) {
 		// TODO Auto-generated method stub
 		if(!e.getValueIsAdjusting()){
 			actual=players.getSelectedValue();
-			main.getPanelTwo().statusPlayer(actual.getNickName(),actual.getPin(),
-					actual.getGeoLocation(),actual.getAbility(),actual.getGeoLocation());
+			main.viewListWeapon();
 			
+		}else {
+			actual=main.getPanelOne().getActual();
 		}
 		
+	}
+	
+	public JList getPlayers() {
+		return players;
+	}
+	
+	public JList getWeapons() {
+		return weapons;
 	}
 
 }

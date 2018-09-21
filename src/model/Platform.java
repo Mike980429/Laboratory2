@@ -18,7 +18,6 @@ public class Platform {
 
 	
 	private HashMap<Integer, Player> players;
-	//private HashMap<String,players> playersOne;
 	
 	
 	public Platform() {
@@ -108,19 +107,29 @@ public class Platform {
 		return listPlayer;
 	}
 	
-	public Integer searchPlayer(String nickName) {
-		Integer pos=0;
+
+	public void searchPlayerForShoot(String nickName) throws Exception {
 		Iterator<Integer> iterator=players.keySet().iterator();
 		boolean f=false;
 		while(iterator.hasNext()&&!f) {
 			Integer key=iterator.next();
-			if(players.get(key).getNickName().equalsIgnoreCase(nickName)) {
-				pos=key;
+			Player actual= players.get(key);
+			
+			if(actual.getNickName().equalsIgnoreCase(nickName)) {
+				actual.shootPlayer();
 				f=true;
+			}else{
+					while(actual!=null){
+					if(actual.getNickName().equalsIgnoreCase(nickName)) {
+						actual.shootPlayer();
+						f=true;
+					}
+					actual= actual.getSig();
+				}
 			}
 		}
-		return pos;
 	}
+	
 	
 	public void deletePlayer(String nickName) {
 		Iterator<Integer> iterator=players.keySet().iterator();
