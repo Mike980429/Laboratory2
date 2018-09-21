@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import model.Platform;
+import model.Player;
 
 public class PlataformTest {
 	
@@ -12,7 +13,11 @@ public class PlataformTest {
 	
 	public void setUpEscenari1(){
 		main= new Platform();
-		main.addPlayer("Jaun", 1, "brasil", 1, 1);
+
+		main.addPlayer("Juan", 1, "brasil", 1, 1);
+		main.addPlayer("Pablo", 1, "brasil", 1, 1);
+		main.addPlayer();
+
 		
 	}
 	
@@ -29,12 +34,9 @@ public class PlataformTest {
 	
 	@Test
 	public void lastPlayer() {
-		main= new Platform();
-		int size= main.getPlayers().size();
+		setUpEscenari1();
 		
-		main.addPlayer("Mabe", 1, "1", 1, 1);
-		
-		assertTrue(size!=(main.getPlayers().size()));
+		assertEquals(main.lastPlayerPlatform(1),  );
 	}
 	
 
