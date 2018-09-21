@@ -110,6 +110,7 @@ public class Platform {
 
 	public void searchPlayerForShoot(String nickName) throws Exception {
 		Iterator<Integer> iterator=players.keySet().iterator();
+		
 		boolean f=false;
 		while(iterator.hasNext()&&!f) {
 			Integer key=iterator.next();

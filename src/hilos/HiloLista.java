@@ -24,19 +24,18 @@ public class HiloLista extends Thread {
 				Iterator<Integer> iterator=gra.getPlatform().getPlayers().keySet().iterator();
 				boolean f=false;
 				
-				while(iterator.hasNext()&&!f) {
+				while(iterator.hasNext()) {
 					
 					Integer key=iterator.next();
-					Player actual= players.get(key);
+					Player actual= gra.getPlatform().getPlayers().get(key);
 					
 					if(actual.getAbility().equalsIgnoreCase(a.getAbility())&&actual.getPlatform().equalsIgnoreCase(a.getPlatform())) {
 						players.add(actual);
-						f=true;
+					
 					}else{
 							while(actual!=null){
 							if(actual.getAbility().equalsIgnoreCase(a.getAbility())&&actual.getPlatform().equalsIgnoreCase(a.getPlatform())) {
 								players.add(actual);
-								f=true;
 							}
 							actual= actual.getSig();
 						}
@@ -46,7 +45,7 @@ public class HiloLista extends Thread {
 					i++;
 					gra.repaint();
 				
-					Thread.sleep(444);	
+					Thread.sleep(800);	
 				
 
 			}
