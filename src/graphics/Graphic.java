@@ -12,6 +12,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.ListModel;
 
+import hilos.HiloLista;
 import model.Platform;
 import model.Player;
 import model.Weapon;
@@ -28,6 +29,7 @@ public class Graphic extends JFrame{
 	private PanelThree panelThree;
 	private JLabel image;
 	private ImageIcon ima;
+	private Thread hilo;
 	
 	private JPanel panelAux;
 
@@ -35,6 +37,8 @@ public class Graphic extends JFrame{
 	public Graphic() {
 		// TODO Auto-generated constructor stub
 		
+		
+	//	hilo=new HiloLista();
 		image=new JLabel();
 		ima=new ImageIcon("./sources/2.jpg");
 		Icon c=new ImageIcon(ima.getImage());
@@ -119,4 +123,9 @@ public class Graphic extends JFrame{
 		Player[] s=platform.convertListPlayers().toArray(new Player[platform.convertListPlayers().size()]);
 		panelThree.getPlayers().setListData(s);
 	}
+	
+	public void goUpPlatform() {
+	}
+	
+	
 }
