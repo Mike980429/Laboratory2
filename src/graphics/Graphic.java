@@ -124,8 +124,9 @@ public class Graphic extends JFrame{
 		panelThree.getPlayers().setListData(s);
 	}
 	
-	public void goUpPlatform() {
-			
+	public void exitPlatform() {
+			panelThree.setVisible(false);
+			hilo.stop();
 	}
 	public PanelThree getPanelThree() {
 		return panelThree;
@@ -133,5 +134,10 @@ public class Graphic extends JFrame{
 	public void activeThread() {
 		hilo.start();
 	}
+	public Platform getPlatform() {
+		return platform;
+	}
+	
+	
 	
 }

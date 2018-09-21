@@ -75,7 +75,7 @@ public class PanelTwo extends JPanel implements ActionListener {
 		nickName1=new JTextField();
 		nickName1.setEnabled(false);
 
-		ability1=new JTextField();
+		ability1=new JTextField("Dijite 1.NOVATO 2.INTERMEDIO 3.AVANZADO");
 		ability1.setEnabled(false);
 		
 		pin1=new JTextField();
@@ -84,7 +84,7 @@ public class PanelTwo extends JPanel implements ActionListener {
 		geoLocation1=new JTextField();
 		geoLocation1.setEnabled(false);
 		
-		platform1=new JTextField();
+		platform1=new JTextField("Dijite 1.XBOX 2.PC 3.PS4");
 		platform1.setEnabled(false);
 		
 		setBorder(new TitledBorder("Datos Jugador"));
