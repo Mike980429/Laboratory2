@@ -31,24 +31,29 @@ public class HiloLista extends Thread {
 					
 					if(actual.getAbility().equalsIgnoreCase(a.getAbility())&&actual.getPlatform().equalsIgnoreCase(a.getPlatform())) {
 						players.add(actual);
-					
-					}else{
+						gra.viewListPlayers1(players.toArray(new Player[i]));
+						i++;
+						Thread.sleep(500);	
+					}
 							while(actual!=null){
 							if(actual.getAbility().equalsIgnoreCase(a.getAbility())&&actual.getPlatform().equalsIgnoreCase(a.getPlatform())) {
 								players.add(actual);
+								gra.viewListPlayers1(players.toArray(new Player[i]));
+								Thread.sleep(500);	
+								i++;
 							}
 							actual= actual.getSig();
-						}
+						
 
 					}
-					gra.viewListPlayers1(players.toArray(new Player[i]));
-					i++;
+							
+					
 					gra.repaint();
+					
 				
-					Thread.sleep(800);	
-				
-
+					
 			}
+				System.out.println(i);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

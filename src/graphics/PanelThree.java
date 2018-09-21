@@ -114,9 +114,8 @@ public class PanelThree extends JDialog implements ActionListener, ListSelection
 		}else if(e.getActionCommand().equals(SHOOT)) {
 
 			try {
-				actual.shootPlayer();
 				main.viewListWeapon();
-				
+				actual.shootPlayer();
 				} catch (Exception e1) {
 					JOptionPane.showMessageDialog(null,"Seleccione el jugador");
 			}

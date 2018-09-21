@@ -157,10 +157,17 @@ public class PanelTwo extends JPanel implements ActionListener {
 			String nick=JOptionPane.showInputDialog("Dijite el nickname del jugador a eliminar");
 			main.deletePlayer(nick);
 		}else if(e.getActionCommand().equals(ADDPLATFORM)) {
-			main.enterPlatform();
-			//main.viewListPlayers1();
-			
-			main.activeThread();
+			try {
+				if(main.getPanelOne().getActual()!=null) {
+					main.enterPlatform();		
+					main.activeThread();
+				}
+
+			} catch (Exception e2) {
+				// TODO: handle exception
+				JOptionPane.showMessageDialog(null, "Antes de ingresar a la plataforma seleccione el Jugador");
+			}
+
 		}
 		
 	}

@@ -28,7 +28,7 @@ public class PanelOne extends JPanel implements ListSelectionListener{
 		this.main=main;
 		players=new JList<Player>();
 		players.addListSelectionListener(this);
-		
+		players.setSelectedIndex(0);
 		scroll=new JScrollPane();
 
 		aux=new JPanel(new GridLayout());
