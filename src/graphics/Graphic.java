@@ -38,7 +38,7 @@ public class Graphic extends JFrame{
 		// TODO Auto-generated constructor stub
 		
 		
-	//	hilo=new HiloLista();
+		hilo=new HiloLista(this);
 		image=new JLabel();
 		ima=new ImageIcon("./sources/2.jpg");
 		Icon c=new ImageIcon(ima.getImage());
@@ -119,13 +119,19 @@ public class Graphic extends JFrame{
 
 		
 	}
-	public void viewListPlayers1() {
-		Player[] s=platform.convertListPlayers().toArray(new Player[platform.convertListPlayers().size()]);
+	public void viewListPlayers1(Player[] s) {
+		//=platform.convertListPlayers().toArray(new Player[platform.convertListPlayers().size()]);
 		panelThree.getPlayers().setListData(s);
 	}
 	
 	public void goUpPlatform() {
+			
 	}
-	
+	public PanelThree getPanelThree() {
+		return panelThree;
+	}
+	public void activeThread() {
+		hilo.start();
+	}
 	
 }

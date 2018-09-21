@@ -53,16 +53,16 @@ public class PanelTwo extends JPanel implements ActionListener {
 		auxTwo=new JPanel(new GridLayout(1,3));
 		join=new JPanel(new GridLayout(2,1));
 		
-		addPlayer=new JButton("Agregar jugador");
+		addPlayer=new JButton("add Jugador");
 		addPlayer.setActionCommand(ADD);
 		addPlayer.addActionListener(this);
 		
-		deletePlayer=new JButton("Eliminar jugador");
+		deletePlayer=new JButton("Delete player");
 		deletePlayer.setActionCommand(DELETE);
 		deletePlayer.addActionListener(this);
 		deletePlayer.setSize(new Dimension(33,60));
 		
-		addPlatform=new JButton("adir a plataforma");
+		addPlatform=new JButton("add platform");
 		addPlatform.setActionCommand(ADDPLATFORM);
 		addPlatform.addActionListener(this);
 		
@@ -158,7 +158,9 @@ public class PanelTwo extends JPanel implements ActionListener {
 			main.deletePlayer(nick);
 		}else if(e.getActionCommand().equals(ADDPLATFORM)) {
 			main.enterPlatform();
-			main.viewListPlayers1();
+			//main.viewListPlayers1();
+			
+			main.activeThread();
 		}
 		
 	}
